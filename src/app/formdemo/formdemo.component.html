@@ -1,0 +1,182 @@
+<!-- <div class="container col-10">
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <span class="text-danger"
+            *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+            Name is required
+        </span>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <span class="text-danger"
+            *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+            Email is required
+        </span>
+        <span class="text-danger"
+            *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+            Enter a valid email address
+        </span>
+    </div>
+    <div class="form-group">
+        <label>User Name</label>
+        <input type="text" class="form-control" formControlName="username">
+        <span class="text-danger"
+            *ngIf="(registerFormControl.username.touched || submitted) && registerFormControl.username.errors?.required">
+            User Name is required
+        </span>
+        <span class="text-danger"
+            *ngIf="registerFormControl.username.touched && registerFormControl.username.errors?.userNameNotAvailable">
+            User Name is not available
+        </span>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password">
+        <span class="text-danger"
+            *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+            Password is required
+        </span>
+        <span class="text-danger"
+            *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+            Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+            letter and 1 number
+        </span>
+    </div>
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" class="form-control" formControlName="confirmPassword">
+        <span class="text-danger"
+            *ngIf="(registerFormControl.confirmPassword.touched || submitted)&& registerFormControl.confirmPassword.errors?.required">
+            Confirm Password is required
+        </span>
+        <span class="text-danger"
+            *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">
+            Passwords doesnot match
+        </span>
+    </div>
+        <div class="form-group col-md-6">
+          <label for="inputState">State</label>
+          <select id="inputState" class="form-control" [(ngModel)]="dropdown">
+            <option selected value="">Choose...</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="Angular">Angular</option>
+          </select>
+        </div>
+        <div class="custom-control custom-radio">
+            <input   type="radio" class="custom-control-input" id="first" name="3" value="JavaScript" [(ngModel)]="radio">
+            <label class="custom-control-label" for="first">JavaScript  </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input   type="radio" class="custom-control-input" id="second" name="3" value="Java"  [(ngModel)]="radio">
+            <label class="custom-control-label" for="second">Java </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input   type="radio" class="custom-control-input" id="third" name="3" value="JSON" [(ngModel)]="radio">
+            <label class="custom-control-label" for="third">JSON</label>
+          </div><br>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)]="checkBox" value="checked">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-outline-warning"  >Sign in</button>
+      </form>
+</div> -->
+<!-- main app container -->
+
+<div  *ngFor = " let value of jsonData ">
+  {{ value.Audi }}
+</div>
+ 
+ 
+  
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h2>Angular 6 Reactive Form Validation</h2>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <label>First Name</label>
+                      <input type="text" formControlName="firstName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors  }"/>
+                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                          <div *ngIf="f. firstName.errors.pattern">Name must be alphabets</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" formControlName="lastName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.lastName.errors  }" />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                          <div *ngIf="f.lastName.errors.pattern">Name must be alohabets</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors  }"/>
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">Email is required</div>
+                          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" formControlName="password" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required" >Password is required</div>
+                          <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                          <div *ngIf="f.password.errors.pattern">Password must be number</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="custom-control custom-radio">
+                        <input   type="radio" class="custom-control-input" id="first" name="radio" value="JavaScript"  [ngClass]="{ 'is-invalid': submitted && f.radio.errors }"  formControlName="radio">
+                        <label class="custom-control-label" for="first">JavaScript  </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input   type="radio" class="custom-control-input" id="second" name="radio" value="Java"  [ngClass]="{ 'is-invalid': submitted && f.radio.errors }" formControlName="radio" >
+                        <label class="custom-control-label" for="second">Java </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input   type="radio" class="custom-control-input" id="third" name="radio" value="JSON"  [ngClass]="{ 'is-invalid': submitted && f.radio.errors }"   formControlName="radio" >
+                        <label class="custom-control-label" for="third">JSON</label>
+                        <div *ngIf="submitted && f.radio.errors" class="invalid-feedback">
+                          <div *ngIf="f.radio.errors.required">Radio options are required</div>
+                        </div>
+                      </div>
+                     
+                     
+                  </div>
+                  <div class="form-group ">
+                    
+                      <input   type="checkbox" id="gridCheck"  value="checked" [ngClass]="{ 'is-invalid': submitted && f.checkbox.errors }"   formControlName="checkbox"/>
+                      <label  for="gridCheck">
+                        Check me out
+                      </label>
+                      <div *ngIf="submitted && f.checkbox.errors" class="invalid-feedback">
+                        <div *ngIf="f.checkbox.errors.required">checkbox field is required</div>
+                    </div>
+                     
+                  </div>
+                  <div class="form-group">
+                      <button  class="btn btn-primary">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 

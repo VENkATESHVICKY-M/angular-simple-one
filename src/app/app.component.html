@@ -1,0 +1,104 @@
+<!-- 
+<input type="text" [(ngModel)]="firstname" placeholder="Enter..">
+<button (click)="onSubmit()">Submit</button>
+<br>
+<hr>
+<table>
+  <tr>
+    <td>{{outputString}}</td>
+    <button (click)="onClick()">Edit</button>
+  </tr>
+</table> -->
+<!-- ----------------------------------------------------------------- -->
+<!-- property binding -->
+  <!-- <input type="text"   [value] ="MaliciousData" > -->
+
+<!-- interpolation binding -->
+  <!-- <p>  {{interpolation}} </p> -->
+
+<!-- property binding -->
+  <!-- <input type="textarea"  [value]="property"> -->
+<!-- class property -->
+  <!-- <button class="color" [class]='italic'>Click Me</button>   -->
+
+<!--     
+  <h1 [class.myClass]="isTrue">This class binding is for true value</h1>
+  <h1 [class.myClass]="!isTrue">This class binding is for false value</h1>
+
+  <table>
+    <tr><td [attr.colspan]="3">three</td></tr>
+    <tr><td [attr.colspan]="2">1</td>
+      <td [attr.colspan]="2">2</td>
+      <td [attr.colspan]="2">3</td>
+    </tr>
+    </table> -->
+<!-- -------------------------------------------------------------------------------------- -->
+<!-- pipes -->
+    <!-- <b>
+      {{pipe | uppercase}}<br>
+      {{pipe | lowercase}}<br>
+      {{currency_pipe | currency:'INR':true}}<br>
+      {{date_pipe | custompipe:'d-MM-yyyy' }}<br>
+      {{date | date:'yyyy.MM.dd'}}<br>
+      {{0.8745 | percent }}<br>
+      {{0.8745 | percent: '2.3-3'}}<br>
+      {{json_pipe | json}}<br>
+    </b> -->
+<!-- -------------------------------------------------------------------------------------- -->
+<!-- <input type="text" [(ngModel)]="firstname" placeholder="Enter..">
+<p>{{firstname}}</p> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-info col-6  container">
+  <ul class="navbar-nav  ">
+    <li class="nav-item btn btn-outline-warning  "  routerLink="/">
+      <a class="nav-link ">Home</a>
+    </li> 
+    <li class="nav-item btn btn-outline-warning  "  routerLink="/form">
+      <a class="nav-link ">Form</a>
+    </li> 
+      <li class="nav-item btn btn-outline-warning  "  routerLink="question">
+        <a class="nav-link ">Question</a>
+      </li> 
+      <li class="nav-item btn btn-outline-warning  " routerLink="marks">
+        <a class="nav-link" >Result </a>
+      </li>
+      <li class="nav-item btn btn-outline-warning  " routerLink="demo">
+        <a class="nav-link" >Demo Multiple </a>
+      </li>
+    </ul>
+</nav>
+<div style="text-align: center;">
+      <b>{{date_pipe | custompipe:'d-MM-yyyy' }} </b>
+        
+      <!-- <div *ngIf="todaydate"> {{todaydate}}</div> -->
+      <!-- <div style="display:inline-flex;">
+        <button routerLink="/question" class="btn btn-outline-warning">
+          Question
+        </button> 
+        <button routerLink="/marks" class="btn btn-outline-warning">
+          Marks
+        </button>
+        <button routerLink="/" class="btn btn-outline-warning">
+          Home
+        </button><hr>
+      </div>  <br> -->
+        <!-- <img src="https://img.freepik.com/free-vector/happy-tiny-people-near-huge-welcome-word-flat-illustration_74855-10808.jpg?size=626&ext=jpg&ga=GA1.2.1007775366.1628496636"> -->
+      
+                                                     
+</div> 
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
