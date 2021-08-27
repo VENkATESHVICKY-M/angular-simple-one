@@ -54,11 +54,8 @@ export class FormdemoComponent implements OnInit {
         }
         // stop here if form is invalid
         if (this.registerForm.invalid) {
-            return;
-            
+            return;    
         }
-      
-        
         alert('SUCCESS!! :-)')
     }
     

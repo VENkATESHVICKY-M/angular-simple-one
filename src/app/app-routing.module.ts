@@ -7,6 +7,10 @@ import { ResultComponent } from './result/result.component';
 import { QuestionTestComponent } from './question-test/question-test.component';
 import { DemoComponent } from './demo/demo.component';
 import { FormdemoComponent } from './formdemo/formdemo.component';
+import { MaterialsComponent } from './materials/materials.component';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+
 const routes: Routes = [
   {
     "path":"test",
@@ -45,18 +49,26 @@ const routes: Routes = [
       component : TestComponent,
     },
      
+     
     ]
   },
   {
     path : "form",
     component : FormdemoComponent ,
   },
-  
+  {
+    path : "materials",
+    component : MaterialsComponent
+  }
+ 
 
   ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+  
+ 
+],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

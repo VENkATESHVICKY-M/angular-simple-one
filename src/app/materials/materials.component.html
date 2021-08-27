@@ -1,0 +1,139 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="push">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button class="btn btn-outline-info">
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()" class="btn btn-outline-info">
+        Toggle sidenav
+      </button>
+    </div>
+  
+  </mat-drawer-container>
+<div class="container bg-secondary" > 
+    <form class="example-form">
+        <p> <mat-form-field appearance="outline">
+            <mat-label>
+                Name:
+            </mat-label>
+            <input matInput>
+        </mat-form-field>
+    </p>
+        <p> <mat-form-field appearance="outline">
+            <mat-label>
+                E-mail:
+            </mat-label>
+            <input matInput>
+        </mat-form-field>
+    </p>
+        <p> <mat-form-field appearance="outline">
+            <mat-label>
+                Mobile No:
+            </mat-label>
+            <input matInput>
+        </mat-form-field>
+    </p>
+       <p> <mat-form-field appearance="outline">
+            <mat-label>
+                Gender:
+            </mat-label>
+            <input matInput>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <mat-label>
+                Choose Country:
+            </mat-label>
+            <mat-select>
+                <mat-option *ngFor=" let op of options" value = "options.value ">
+                    {{op.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </p>
+    </form>
+    
+    <mat-label>
+        Gender:
+    </mat-label>
+   <mat-radio-group>
+       <mat-radio-button value="1">
+           option 1
+       </mat-radio-button>
+       <mat-radio-button value="2">
+        option 2
+       </mat-radio-button>
+   </mat-radio-group><hr>
+
+   <label id="example-radio-group-label">Pick your favorite season</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+    <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+    </mat-radio-button>
+    </mat-radio-group>
+    <div>Your favorite season is: {{favoriteSeason}}</div>
+<hr>
+<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+<hr>
+    <mat-list>
+        <mat-list-item>
+            List 1
+        </mat-list-item>
+        <mat-list-item>
+            List 2
+        </mat-list-item>
+        <mat-list-item>
+            List 3
+        </mat-list-item>
+    </mat-list>
+<hr>
+
+
+</div>
+<div class="container-fluid">
+<mat-toolbar color="primary" >
+    <mat-toolbar-row  >
+      <button (click)="sidenav.toggle()" class="btn btn-outline-info">
+        <mat-icon >menu</mat-icon>
+      </button>
+      <mat-icon>face</mat-icon>
+       <h3>OoEvu</h3> 
+      <br>
+      <!-- <div style="justify-content: right;">
+        <a mat-button  > Accounts </a>
+        <a mat-button  > Create Account </a>
+        <a mat-button  > Contacts </a>
+        <a mat-button  > Create Contact </a>
+        <a mat-button > Activities </a>
+        <a mat-button > Create Activity </a>
+  
+      </div> -->
+      <div style="position:absolute;right: 50px;">
+        <mat-icon>home</mat-icon>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+<mat-sidenav-container >
+    <mat-sidenav #sidenav style="width: 20%; background-color:grey;"  >
+        <mat-nav-list>
+            <a mat-list-item> Student </a>
+            <a mat-list-item> Teacher </a>
+            <a mat-list-item> Admin Portal </a>
+            <a mat-list-item> Results </a>
+          </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;background-color: gainsboro;">
+         
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+</div>

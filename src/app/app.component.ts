@@ -33,9 +33,7 @@ export class AppComponent {
   }
 
   firstname :any ="";
-  
-
  
-  
+ 
 
 }
